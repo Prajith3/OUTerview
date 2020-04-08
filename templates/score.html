@@ -1,0 +1,138 @@
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Score</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href={{ url_for('static', filename='css/vendor/fontawesome-free/css/all.min.css') }} rel="stylesheet" type="text/css">
+  <link href={{ url_for('static', filename='css/vendor/datatables/dataTables.bootstrap4.css') }} rel="stylesheet">
+  <link href={{ url_for('static', filename='css/sb-admin.css') }} rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand mr-1" href="index.html">OUTERview</a>
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
+    <!-- Navbar -->
+
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/dashboard">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/github">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Github</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/language">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Report</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-check"></i>
+          <span>Score</span></a>
+      </li>
+    </ul>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Page Content -->
+        <h1>Final Score</h1>
+        <hr>
+        <div class="container">
+          <a href="http://127.0.0.1:5000/save?score={{ score }}"><button class="btn btn-primary btn-success" style="margin-left: 80%">Save Report</button></a>
+          <div class="row">
+            <div class="col-md-3"><h5>Reputation {{ r }}%</h5></div>
+            <div class="col-md-9">
+              <div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated" style="width:{{ r }}%"></div></div>
+            </div><br><br>
+
+            <div class="col-md-3"><h5>Problem Solved {{ s }}%</h5></div>
+            <div class="col-md-9">
+              <div class="progress"><div class="progress-bar  bg-success progress-bar-striped progress-bar-animated" style="width:{{ s }}%"></div></div>
+            </div><br><br>
+
+            <div class="col-md-3"><h5>Ranking {{ ra }}%</h5></div>
+            <div class="col-md-9">
+              <div class="progress"><div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width:{{ ra }}%"></div></div>
+            </div><br><br>
+
+            <div class="col-md-3"><h5>Active {{ a }}%</h5></div>
+            <div class="col-md-9">
+              <div class="progress"><div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width:{{ a }}%"></div></div>
+            </div><br><br>
+
+            <div class="col-md-3"><h5>Contributions {{ fin }}%</h5></div>
+            <div class="col-md-9">
+              <div class="progress"><div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width:{{ fin }}%"></div></div>
+            </div><br><br>
+          </div>
+          </div>
+          <h3 style="padding-left: 10%;"><u>Total Score</u></h3>
+        <div id="doom" style="padding-top: 20px;" class="container">
+          <script src={{ url_for('static', filename='js/progress.js') }}></script>
+          <script type="text/javascript">
+            const pb = new Progress();
+            const elm = pb.getElement();
+            document.getElementById('doom').appendChild(elm);
+            elm.style.cssText='position:absolute;left:calc(50% - 150px);top:calc(50%);';
+            pb.setValue({{ score }});
+          </script>
+        </div>
+      </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <style type="text/css">
+      #doom{
+        transform: scale(3);
+      }
+      .progress{
+        width: 40%;
+      }
+    </style>
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src={{ url_for('static', filename='js/jquery/jquery.min.js') }} ></script>
+  <script src={{ url_for('static', filename='js/bjs/bootstrap.bundle.min.js') }}></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src={{ url_for('static', filename='js/jquery-easing/jquery.easing.min.js') }} ></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src={{ url_for('static', filename='js/sb-admin.min.js') }}></script>
+
+</body>
+
+</html>

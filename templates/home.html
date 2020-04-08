@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OUTERview</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href={{ url_for('static', filename='css/vendor/fontawesome-free/css/all.min.css') }} rel="stylesheet" type="text/css">
+  <link href={{ url_for('static', filename='css/vendor/datatables/dataTables.bootstrap4.css') }} rel="stylesheet">
+  <link href={{ url_for('static', filename='css/sb-admin.css') }} rel="stylesheet">
+  <style>
+  #bg {
+    background-image: url('/static/images/bg.jpg');
+    background-position: center top;
+    background-size: 100% auto;
+  }
+  </style>
+</head>
+<body id="bg" >
+
+<div class="container">
+  <br>
+  <br>
+  <center><h2 style="color: White;">OUTER<span style="color:#28A745;">view</span></h2></center>
+  <form action="http://127.0.0.1:5000/fill" method="GET">
+    <div class="form-group">
+      <label for="name" style="color: White;">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="github_name" style="color: White;">Github name:</label>
+      <input type="text" class="form-control" id="github_name" placeholder="Enter github_name" name="github_name" required>
+    </div>
+    <div class="form-group">
+      <label for="sof" style="color: White;">Stackoverflow ID:</label>
+      <input type="text" class="form-control" id="sof" placeholder="Enter stackoverflow ID" name="sof" required>
+    </div>
+    <div class="form-group">
+      <label for="he" style="color: White;">Hackerearth name:</label>
+      <input type="text" class="form-control" id="he" placeholder="Enter hackerearth username" name="he" required>
+    </div>
+    <div class="form-group">
+      <label for="cf" style="color: White;">Codeforces name:</label>
+      <input type="text" class="form-control" id="cf" placeholder="Enter codeforces username" name="cf" required>
+    </div>
+    <div class="form-group">
+      <label for="cc" style="color: White;">Codechef name:</label>
+      <input type="text" class="form-control" id="cc" placeholder="Enter codechef username" name="cc" required>
+    </div>
+    <div class="form-group">
+      <label for="spoj" style="color: White;">SPOJ name:</label>
+      <input type="text" class="form-control" id="spoj" placeholder="Enter spoj username" name="spojname" required>
+    </div><br>
+    <center><button type="submit" class="btn btn-primary btn-success">Check the score</button></center>
+    <br><br>
+  </form>
+</div>
+
+<script src={{ url_for('static', filename='js/jquery/jquery.min.js') }} ></script>
+  <script src={{ url_for('static', filename='js/bjs/bootstrap.bundle.min.js') }}></script>
+  <script src={{ url_for('static', filename='js/jquery-easing/jquery.easing.min.js') }} ></script>
+  <script src={{ url_for('static', filename='js/sb-admin.min.js') }}></script>
+
+</body>
+</html>
